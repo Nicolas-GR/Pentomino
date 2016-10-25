@@ -42,10 +42,13 @@ public class FPiece extends Piece {
 
     @Override
     public Square[][] rotateLeft(Square[][] fMatrix) {
-        fMatrix = this.rotateRight(fMatrix);
-        fMatrix = this.rotateRight(fMatrix);
-        fMatrix = this.rotateRight(fMatrix);
-        return fMatrix;
+        Square[][] tempMatrix = new Square[x][y];
+        for (int row = 0; row < fMatrix.length; row++) {
+            for (int col = 0; col < fMatrix[0].length; col++) {
+                tempMatrix[row][col] = fMatrix[col][(fMatrix.length - 1) - row];
+            }
+        }
+        return tempMatrix;
     }
 
     @Override
@@ -53,7 +56,7 @@ public class FPiece extends Piece {
         Square[][] tempMatrix = new Square[x][y];
         for (int row = 0; row < fMatrix.length; row++) {
             for (int col = 0; col < fMatrix[0].length; col++) {
-                tempMatrix[col][(fMatrix.length-1)-row] = fMatrix[row][col];
+                tempMatrix[col][(fMatrix.length - 1) - row] = fMatrix[row][col];
             }
         }
         return tempMatrix;
@@ -61,7 +64,13 @@ public class FPiece extends Piece {
 
     @Override
     public Square[][] reflectVertical(Square[][] fMatrix) {
-        return fMatrix;
+        Square[][] tempMatrix = new Square[x][y];
+        for (int row = 0; row < fMatrix.length; row++) {
+            for (int col = 0; col < fMatrix[0].length; col++) {
+                tempMatrix[row][(fMatrix.length - 1) - col] = fMatrix[row][col];
+            }
+        }
+        return tempMatrix;
     }
 
     @Override
@@ -69,7 +78,7 @@ public class FPiece extends Piece {
         Square[][] tempMatrix = new Square[x][y];
         for (int row = 0; row < fMatrix.length; row++) {
             for (int col = 0; col < fMatrix[0].length; col++) {
-                tempMatrix[row][col] = fMatrix[(fMatrix.length-1)-row][col];
+                tempMatrix[row][col] = fMatrix[(fMatrix.length - 1) - row][col];
             }
         }
         return tempMatrix;
@@ -94,8 +103,6 @@ public class FPiece extends Piece {
     public FPiece(Square[][] fMatrix) {
         this.fMatrix = fMatrix;
     }
-    
-    
 
     public Square[][] getfMatrix() {
         return fMatrix;
@@ -104,7 +111,5 @@ public class FPiece extends Piece {
     public void setfMatrix(Square[][] fMatrix) {
         this.fMatrix = fMatrix;
     }
-    
-    
-    
+
 }

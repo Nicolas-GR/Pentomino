@@ -31,12 +31,18 @@ public class Pentomino {
         piezaF = new FPiece(fMatrix);
         System.out.println(piezaF);
         
+        fMatrix = piezaF.reflectHorizontal(fMatrix);
+        piezaF = new FPiece(fMatrix);
+        System.out.println(piezaF);
         
-        fMatrix = piezaF.rotateRight(fMatrix);
+        fMatrix = piezaF.reflectVertical(fMatrix);
         piezaF = new FPiece(fMatrix);
         System.out.println(piezaF);
         
         
+        fMatrix = piezaF.reflectVertical(fMatrix);
+        piezaF = new FPiece(fMatrix);
+        System.out.println(piezaF);
         
         
     }
