@@ -12,11 +12,11 @@ public class Pentomino {
         //Ui.printWelcome();
         
         Board tablero = new Board(5,8);
-        //System.out.println(tablero);
+        System.out.println(tablero);
         
         FPiece piezaF = new FPiece();
         System.out.println(piezaF);
-        
+       /* 
         Square[][] fMatrix = piezaF.getfMatrix();
         
         fMatrix = piezaF.rotateRight(fMatrix);
@@ -43,7 +43,7 @@ public class Pentomino {
         fMatrix = piezaF.reflectVertical(fMatrix);
         piezaF = new FPiece(fMatrix);
         System.out.println(piezaF);
-        
+        */
         
     }
     
