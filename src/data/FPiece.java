@@ -1,8 +1,9 @@
 package data;
 
-import data.Square;
+
 
 public class FPiece extends Piece {
+    
     ///////////////////////////////////////////////////////////////////////////
     //Atributos
     ///////////////////////////////////////////////////////////////////////////
@@ -11,6 +12,7 @@ public class FPiece extends Piece {
     private final static int x = 3;
     private final static int y = 3;
     private final char pieceName = 'F';
+    private final String value = "O";
     
     ///////////////////////////////////////////////////////////////////////////
     //Constructores
@@ -36,12 +38,12 @@ public class FPiece extends Piece {
                         Square square = new Square(row, col, " ");
                         fMatrix[row][col] = square;
                     } else {
-                        Square square = new Square(row, col, "O");
+                        Square square = new Square(row, col, value);
                         fMatrix[row][col] = square;
                     }
 
                 } else {
-                    Square square = new Square(row, col, "O");
+                    Square square = new Square(row, col, value);
                     fMatrix[row][col] = square;
                 }
             }
@@ -107,7 +109,12 @@ public class FPiece extends Piece {
         }
         return tempMatrix;
     }
-
+    
+    ///////////////////////////////////////////////////////////////////////////
+    // Sobre escritura del método toString.
+    ///////////////////////////////////////////////////////////////////////////    
+    
+    
     @Override
     public String toString() {
         String printMatrix = "\n";

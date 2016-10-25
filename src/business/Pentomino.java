@@ -5,6 +5,7 @@ import data.Square;
 import data.FPiece;
 import ui.Ui;
 import data.Board;
+import data.TPiece;
 
 public class Pentomino {
     
@@ -16,8 +17,19 @@ public class Pentomino {
         
         FPiece piezaF = new FPiece();
         System.out.println(piezaF);
-        char name = piezaF.getName();
-        System.out.println(name);
+        char nameF = piezaF.getName();
+        System.out.println(nameF);
+        
+        TPiece piezaT = new TPiece();
+        System.out.println(piezaT);
+        char nameT = piezaT.getName();
+        System.out.println(nameT);
+        
+        Square[][] tMatrix = piezaT.gettMatrix();
+        
+        tMatrix = piezaT.rotateRight(tMatrix);
+        piezaT = new TPiece(tMatrix);
+        System.out.println(piezaT);
         
        /* 
         Square[][] fMatrix = piezaF.getfMatrix();

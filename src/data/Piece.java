@@ -2,6 +2,7 @@ package data;
 
 public abstract class Piece {
 
+    
     private char name;
     
     abstract public  Square[][] rotateLeft(Square[][] matrix);
