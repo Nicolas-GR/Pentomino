@@ -16,6 +16,9 @@ public class Pentomino {
         
         FPiece piezaF = new FPiece();
         System.out.println(piezaF);
+        char name = piezaF.getName();
+        System.out.println(name);
+        
        /* 
         Square[][] fMatrix = piezaF.getfMatrix();
         
