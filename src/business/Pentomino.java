@@ -9,12 +9,31 @@ import data.Board;
 public class Pentomino {
     
     public static void main(String[] args) {
-        Ui.printWelcome();
+        //Ui.printWelcome();
         
         Board tablero = new Board(5,8);
-        System.out.println(tablero);
+        //System.out.println(tablero);
         
         FPiece piezaF = new FPiece();
+        System.out.println(piezaF);
+        
+        Square[][] fMatrix = piezaF.getfMatrix();
+        
+        fMatrix = piezaF.rotateRight(fMatrix);
+        piezaF = new FPiece(fMatrix);
+        System.out.println(piezaF);
+        
+        fMatrix = piezaF.rotateLeft(fMatrix);
+        piezaF = new FPiece(fMatrix);
+        System.out.println(piezaF);
+        
+        fMatrix = piezaF.reflectHorizontal(fMatrix);
+        piezaF = new FPiece(fMatrix);
+        System.out.println(piezaF);
+        
+        
+        fMatrix = piezaF.rotateRight(fMatrix);
+        piezaF = new FPiece(fMatrix);
         System.out.println(piezaF);
         
         
