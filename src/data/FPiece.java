@@ -13,6 +13,7 @@ public class FPiece extends Piece {
     private final static int y = 3;
     private final char pieceName = 'F';
     private final String value = "O";
+    private final String emptySquare = " ";
     
     ///////////////////////////////////////////////////////////////////////////
     //Constructores
@@ -25,17 +26,17 @@ public class FPiece extends Piece {
         for (int row = 0; row < fMatrix.length; row++) {
             for (int col = 0; col < fMatrix[0].length; col++) {
                 if (row == 0 && col == 0) {
-                    Square square = new Square(row, col, " ");
+                    Square square = new Square(row, col, emptySquare);
                     fMatrix[row][col] = square;
                 } else if (row == 1 && col == 2) {
-                    Square square = new Square(row, col, " ");
+                    Square square = new Square(row, col, emptySquare);
                     fMatrix[row][col] = square;
                 } else if (row == 2) {
                     if (col == 0) {
-                        Square square = new Square(row, col, " ");
+                        Square square = new Square(row, col, emptySquare);
                         fMatrix[row][col] = square;
                     } else if (col == 2) {
-                        Square square = new Square(row, col, " ");
+                        Square square = new Square(row, col, emptySquare);
                         fMatrix[row][col] = square;
                     } else {
                         Square square = new Square(row, col, value);

@@ -10,6 +10,7 @@ public class TPiece extends Piece {
     private final static int y = 3;
     private final char pieceName = 'T';
     private final String value = "#";
+    private final String emptySquare = " ";
 
     ///////////////////////////////////////////////////////////////////////////
     //Constructores
@@ -22,7 +23,7 @@ public class TPiece extends Piece {
             for (int col = 0; col < tMatrix[0].length; col++) {
                 if (col == 0 || col == tMatrix[0].length - 1) {
                     if (row != 0) {
-                        Square square = new Square(row, col, " ");
+                        Square square = new Square(row, col, emptySquare);
                         tMatrix[row][col] = square;
                     } else {
                         Square square = new Square(row, col, value);
