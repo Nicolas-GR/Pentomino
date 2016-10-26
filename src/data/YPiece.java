@@ -1,6 +1,6 @@
 package data;
 
-public class YPiece extends Piece{
+public class YPiece extends Piece {
 
     ///////////////////////////////////////////////////////////////////////////
     //Atributos
@@ -43,7 +43,13 @@ public class YPiece extends Piece{
     //Método Rotar hacia la Izquierda.
     @Override
     public Square[][] rotateLeft(Square[][] matrix) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        Square[][] tempMatrix = new Square[y][x];
+        for (int row = 0; row < yMatrix.length; row++) {
+            for (int col = 0; col < yMatrix[0].length; col++) {
+                tempMatrix[yMatrix[0].length -1 -col][row] = yMatrix[row][col];
+            }
+        }
+        return tempMatrix;
     }
 
     //Método Rotar hacia la Derecha.
@@ -61,13 +67,25 @@ public class YPiece extends Piece{
     //Método Reflejar Verticalmente.
     @Override
     public Square[][] reflectVertical(Square[][] matrix) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        Square[][] tempMatrix = new Square[x][y];
+        for (int row = 0; row < yMatrix.length; row++) {
+            for (int col = 0; col < yMatrix[0].length; col++) {
+                tempMatrix[row][yMatrix[0].length - 1 - col] = yMatrix[row][col];
+            }
+        }
+        return tempMatrix;
     }
 
     //Método Reflejar Horizontalmente.
     @Override
     public Square[][] reflectHorizontal(Square[][] matrix) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        Square[][] tempMatrix = new Square[x][y];
+        for (int row = 0; row < yMatrix.length; row++) {
+            for (int col = 0; col < yMatrix[0].length; col++) {
+                tempMatrix[yMatrix.length -1 - row][col] = yMatrix[row][col];
+            }
+        }
+        return tempMatrix;
     }
 
     ///////////////////////////////////////////////////////////////////////////

@@ -43,7 +43,13 @@ public class LPiece extends Piece {
     //Método Rotar hacia la Izquierda.
     @Override
     public Square[][] rotateLeft(Square[][] matrix) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        Square[][] tempMatrix = new Square[y][x];
+        for (int row = 0; row < lMatrix.length; row++) {
+            for (int col = 0; col < lMatrix[0].length; col++) {
+                tempMatrix[lMatrix[0].length - 1 - col][row] = lMatrix[row][col];
+            }
+        }
+        return tempMatrix;
     }
 
     //Método Rotar hacia la Derecha.
@@ -52,7 +58,7 @@ public class LPiece extends Piece {
         Square[][] tempMatrix = new Square[y][x];
         for (int row = 0; row < lMatrix.length; row++) {
             for (int col = 0; col < lMatrix[0].length; col++) {
-                tempMatrix[col][lMatrix.length-1-row] = lMatrix[row][col];
+                tempMatrix[col][lMatrix.length - 1 - row] = lMatrix[row][col];
             }
         }
         return tempMatrix;
@@ -61,13 +67,25 @@ public class LPiece extends Piece {
     //Método Reflejar Verticalmente.
     @Override
     public Square[][] reflectVertical(Square[][] matrix) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        Square[][] tempMatrix = new Square[x][y];
+        for (int row = 0; row < lMatrix.length; row++) {
+            for (int col = 0; col < lMatrix[0].length; col++) {
+                tempMatrix[row][lMatrix[0].length - 1 - col] = lMatrix[row][col];
+            }
+        }
+        return tempMatrix;
     }
 
     //Método Reflejar Horizontalmente.
     @Override
     public Square[][] reflectHorizontal(Square[][] matrix) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        Square[][] tempMatrix = new Square[x][y];
+        for (int row = 0; row < lMatrix.length; row++) {
+            for (int col = 0; col < lMatrix[0].length; col++) {
+                tempMatrix[lMatrix.length -1 - row][col] = lMatrix[row][col];
+            }
+        }
+        return tempMatrix;
     }
 
     ///////////////////////////////////////////////////////////////////////////
