@@ -5,10 +5,13 @@ import data.Square;
 import data.FPiece;
 import ui.Ui;
 import data.Board;
+import data.LPiece;
 import data.TPiece;
 import data.VPiece;
 import data.WPiece;
 import data.XPiece;
+import data.YPiece;
+import data.ZPiece;
 
 public class Pentomino {
     
@@ -44,11 +47,26 @@ public class Pentomino {
         char nameX = piezaX.getName();
         System.out.println(nameX);
         
-        Square[][] xMatrix = piezaX.getxMatrix();
+        ZPiece piezaZ = new ZPiece();
+        System.out.println(piezaZ);
+        char nameZ = piezaZ.getName();
+        System.out.println(nameZ);
         
-        xMatrix = piezaX.rotateRight(xMatrix);
-        piezaX = new XPiece(xMatrix);
-        System.out.println(piezaX);
+        LPiece piezaL = new LPiece();
+        System.out.println(piezaL);
+        char nameL = piezaL.getName();
+        System.out.println(nameL);
+        
+        YPiece piezaY = new YPiece();
+        System.out.println(piezaY);
+        char nameY = piezaY.getName();
+        System.out.println(nameY);
+        
+        Square[][] yMatrix = piezaY.getyMatrix();
+        
+        yMatrix = piezaY.rotateRight(yMatrix);
+        piezaY = new YPiece(yMatrix);
+        System.out.println(piezaY);
         
        /* 
         Square[][] fMatrix = piezaF.getfMatrix();
