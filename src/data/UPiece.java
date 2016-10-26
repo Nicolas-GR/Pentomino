@@ -11,7 +11,7 @@ public class UPiece extends Piece{
     private final static int x = 2;
     private final static int y = 3;
     private final char pieceName = 'U';
-    private final String value = "ø";
+    private final String value = "¢";
     private final String emptySquare = " ";
 
     ///////////////////////////////////////////////////////////////////////////

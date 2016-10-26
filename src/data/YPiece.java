@@ -9,7 +9,7 @@ public class YPiece extends Piece {
     private final static int x = 4;
     private final static int y = 2;
     private final char pieceName = 'Y';
-    private final String value = "ø";
+    private final String value = "®";
     private final String emptySquare = " ";
 
     ///////////////////////////////////////////////////////////////////////////

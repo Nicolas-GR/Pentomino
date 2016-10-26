@@ -13,7 +13,7 @@ public class PPiece extends Piece {
     private final static int x = 3;
     private final static int y = 2;
     private final char pieceName = 'P';
-    private final String value = "ø";
+    private final String value = "■";
     private final String emptySquare = " ";
 
     ///////////////////////////////////////////////////////////////////////////

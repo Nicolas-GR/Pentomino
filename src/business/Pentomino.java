@@ -1,10 +1,10 @@
 //This is free, do what you want.
 package business;
 
+/*
 import data.Square;
 import data.FPiece;
 import ui.Ui;
-import data.Board;
 import data.IPiece;
 import data.LPiece;
 import data.NPiece;
@@ -17,6 +17,11 @@ import data.XPiece;
 import data.YPiece;
 import data.ZPiece;
 
+*/
+
+import data.Board;
+import ui.Ui;
+
 public class Pentomino {
 
     public static void main(String[] args) {
@@ -24,7 +29,9 @@ public class Pentomino {
 
         Board tablero = new Board(5, 8);
         System.out.println(tablero);
-
+        
+        Ui.printPieceMenu();
+        /*
         FPiece piezaF = new FPiece();
         System.out.println(piezaF);
         char nameF = piezaF.getName();
@@ -66,7 +73,7 @@ public class Pentomino {
         System.out.println(nameY);
 
         NPiece piezaN = new NPiece();
-        System.out.println(piezaN);
+        System.out.print(piezaN);
         char nameN = piezaN.getName();
         System.out.println(nameN);
 
@@ -87,9 +94,11 @@ public class Pentomino {
 
         Square[][] iMatrix = piezaI.getiMatrix();
 
-        iMatrix = piezaI.reflectHorizontal(iMatrix);
+        iMatrix = piezaI.rotateRight(iMatrix);
         piezaI = new IPiece(iMatrix);
         System.out.println(piezaI);
+        
+        */
 
         /* 
         Square[][] fMatrix = piezaF.getfMatrix();

@@ -9,7 +9,7 @@ public class LPiece extends Piece {
     private final static int x = 4;
     private final static int y = 2;
     private final char pieceName = 'L';
-    private final String value = "ø";
+    private final String value = "¤";
     private final String emptySquare = " ";
 
     ///////////////////////////////////////////////////////////////////////////
