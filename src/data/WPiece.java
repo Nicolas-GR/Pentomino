@@ -11,12 +11,13 @@ public class WPiece extends Piece{
     private final static int x = 3;
     private final static int y = 3;
     private final char pieceName = 'W';
-    private final String value = "+";
+    private final String value = "*";
     private final String emptySquare = " ";
 
     ///////////////////////////////////////////////////////////////////////////
     //Constructores
     ///////////////////////////////////////////////////////////////////////////
+    
     public WPiece() {
         this.setName(pieceName);
         wMatrix = new Square[x][y];
@@ -48,6 +49,7 @@ public class WPiece extends Piece{
     ///////////////////////////////////////////////////////////////////////////
     // Sobre escritura de métodos para rotar y reflejar.
     ///////////////////////////////////////////////////////////////////////////
+    
     //Método Rotar hacia la Izquierda.
     @Override
     public Square[][] rotateLeft(Square[][] wMatrix) {

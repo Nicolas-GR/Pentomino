@@ -8,6 +8,7 @@ import data.Board;
 import data.TPiece;
 import data.VPiece;
 import data.WPiece;
+import data.XPiece;
 
 public class Pentomino {
     
@@ -38,11 +39,16 @@ public class Pentomino {
         char nameW = piezaW.getName();
         System.out.println(nameW);
         
-        Square[][] wMatrix = piezaW.getwMatrix();
+        XPiece piezaX = new XPiece();
+        System.out.println(piezaX);
+        char nameX = piezaX.getName();
+        System.out.println(nameX);
         
-        wMatrix = piezaW.rotateRight(wMatrix);
-        piezaW = new WPiece(wMatrix);
-        System.out.println(piezaW);
+        Square[][] xMatrix = piezaX.getxMatrix();
+        
+        xMatrix = piezaX.rotateRight(xMatrix);
+        piezaX = new XPiece(xMatrix);
+        System.out.println(piezaX);
         
        /* 
         Square[][] fMatrix = piezaF.getfMatrix();
