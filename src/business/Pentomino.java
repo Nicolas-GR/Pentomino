@@ -1,6 +1,6 @@
 //This is free, do what you want.
 package business;
-
+import data.FPiece;
 /*
 import data.Square;
 import data.FPiece;
@@ -29,8 +29,12 @@ public class Pentomino {
 
         Board tablero = new Board(5, 8);
         System.out.println(tablero);
+        FPiece piezaF = new FPiece();
+        Engine.placePiece(tablero, piezaF);
         
-        Ui.printPieceMenu();
+        System.out.println(tablero);
+        
+        //Ui.printPieceMenu();
         /*
         FPiece piezaF = new FPiece();
         System.out.println(piezaF);
@@ -130,7 +134,7 @@ public class Pentomino {
          */
     }
 
-    /*static void imprimeMatriz(String[][] matriz){
+    static void imprimeMatriz(Object[][] matriz){
         
         for (int row = 0; row < matriz.length; row++) {
             for (int col = 0; col < matriz[0].length; col++) {
@@ -139,5 +143,5 @@ public class Pentomino {
             System.out.println("");
 
         }
-    }*/
+    }
 }

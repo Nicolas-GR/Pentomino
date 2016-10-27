@@ -18,13 +18,13 @@ public class Board {
     
     public Board(int rowDimension, int colDimension) {
         board = new Object[rowDimension + 2][colDimension + 2];
-        Square emptySquare = new Square(0 ,0 ," □□ ");
+        Square emptySquare = new Square(0 ,0 ,"□");
 
         for (int row = 0; row < board.length; row++) {
             for (int col = 0; col < board[0].length; col++) {
                 if (row == 0) {
                     if (col != 0 || col != board[0].length) {
-                        Square square = new Square(row, col, "════");
+                        Square square = new Square(row, col, "═");
                         board[row][col] = square;
                     }
                     if (col == 0) {
@@ -37,7 +37,7 @@ public class Board {
                     }
                 } else if (row == board.length - 1) {
                     if (col != 0 || col != board[0].length - 1) {
-                        Square square = new Square(row, col, "════");
+                        Square square = new Square(row, col, "═");
                         board[row][col] = square;
                     }
                     if (col == 0) {
@@ -66,6 +66,12 @@ public class Board {
 
     }
 
+    public Board(Object[][] board) {
+        this.board = board;
+    }
+    
+    
+
 
     ///////////////////////////////////////////////////////////////////////////
     // Sobre escritura del método toString.
@@ -86,5 +92,18 @@ public class Board {
         return printBoard;
 
     }
+
+    public Object[][] getBoard() {
+        return board;
+    }
+
+    public void setBoard(Object[][] board) {
+        this.board = board;
+    }
+    
+    
+
+    
+    
 
 }

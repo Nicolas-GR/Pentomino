@@ -4,6 +4,7 @@ public abstract class Piece {
 
     
     private char name;
+    private Square matrix[][];
     
     abstract public  Square[][] rotateLeft(Square[][] matrix);
     abstract public  Square[][] rotateRight(Square[][] matrix);
@@ -18,6 +19,15 @@ public abstract class Piece {
     public void setName(char name) {
         this.name = name;
     }
+
+    public Square[][] getMatrix() {
+        return matrix;
+    }
+
+    public void setMatrix(Square[][] matrix) {
+        this.matrix = matrix;
+    }
+    
     
     
     
