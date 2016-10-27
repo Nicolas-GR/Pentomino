@@ -1,40 +1,25 @@
 //This is free, do what you want.
 package business;
-import data.FPiece;
-/*
+
 import data.Square;
-import data.FPiece;
-import ui.Ui;
-import data.IPiece;
-import data.LPiece;
-import data.NPiece;
-import data.PPiece;
-import data.TPiece;
-import data.UPiece;
-import data.VPiece;
-import data.WPiece;
-import data.XPiece;
-import data.YPiece;
 import data.ZPiece;
-
-*/
-
-import data.Board;
-import ui.Ui;
 
 public class Pentomino {
 
     public static void main(String[] args) {
         //Ui.printWelcome();
 
-        Board tablero = new Board(5, 8);
-        System.out.println(tablero);
-        FPiece piezaF = new FPiece();
-        Engine.placePiece(tablero, piezaF);
-        
-        System.out.println(tablero);
-        
         //Ui.printPieceMenu();
+        ZPiece piezaZ = new ZPiece();
+        System.out.println(piezaZ);
+        char nameZ = piezaZ.getName();
+        System.out.println(nameZ);
+   
+        
+        Square[][] matrix = piezaZ.rotateRight(piezaZ);
+        
+        imprimeMatriz(matrix);
+        
         /*
         FPiece piezaF = new FPiece();
         System.out.println(piezaF);

@@ -14,7 +14,7 @@ public class Engine {
         
         Object[][] boardMatrix = board.getBoard();
         
-        Square[][] pieceMatrix = piece.getfMatrix();
+        Square[][] pieceMatrix = piece.getPieceMatrix();
         
         Pentomino.imprimeMatriz(boardMatrix);
         Pentomino.imprimeMatriz(pieceMatrix);
