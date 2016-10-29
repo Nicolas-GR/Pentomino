@@ -92,7 +92,22 @@ public class Board {
         return printBoard;
 
     }
+    
+    ///////////////////////////////////////////////////////////////////////////
+    //Setters y Getters
+    ///////////////////////////////////////////////////////////////////////////
 
+    public int getRowDimension() {
+        return rowDimension;
+    }
+
+    public int getColDimension() {
+        return colDimension;
+    }
+
+    
+    
+    
     public Object[][] getBoard() {
         return board;
     }
@@ -100,10 +115,6 @@ public class Board {
     public void setBoard(Object[][] board) {
         this.board = board;
     }
-    
-    
-
-    
     
 
 }
