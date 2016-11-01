@@ -1,8 +1,12 @@
 //This is free, do what you want.
 package business;
 
+import data.FPiece;
+import data.Piece;
 import data.Square;
+import data.TPiece;
 import data.ZPiece;
+import java.util.ArrayList;
 import ui.Ui;
 
 public class Pentomino {
@@ -10,12 +14,17 @@ public class Pentomino {
     private static boolean state = true;
 
     public static void main(String[] args) {
-
         Ui.printWelcome();
+        /*
+        Piece fp = new FPiece();
+        Piece tp = new TPiece();
+        ArrayList <Piece> usedPieces = new ArrayList<Piece>();
+        usedPieces.add(tp);
+        usedPieces.add(fp);
+        Ui.printUsedPieces(usedPieces);
+        */while (state) {
+        Engine.askMainMenu();
 
-        while (state) {
-            Engine.askMainMenu();
-            
         }
         //Ui.printPieceMenu();
 
@@ -37,3 +46,11 @@ public class Pentomino {
     }
 
 }
+
+/*Piece fp = new FPiece();
+        Piece tp = new TPiece();
+        
+        ArrayList <Piece> usedPieces = new ArrayList<Piece>();
+        usedPieces.add(tp);
+        usedPieces.add(fp);
+        Ui.printUsedPieces(usedPieces);*/
