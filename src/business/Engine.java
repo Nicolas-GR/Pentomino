@@ -1,13 +1,11 @@
 package business;
 
 import data.Board;
-import data.Square;
-import data.Piece;
 import data.FPiece;
-import data.IPiece;
 import data.LPiece;
 import data.NPiece;
 import data.PPiece;
+import data.Piece;
 import data.TPiece;
 import data.UPiece;
 import data.VPiece;
@@ -16,19 +14,20 @@ import data.XPiece;
 import data.YPiece;
 import data.ZPiece;
 import ui.Ui;
-import java.util.ArrayList;
-import java.util.Scanner;
 
 public class Engine {
-    private static ArrayList<Piece> usedPieces = new ArrayList<Piece>();
-    private static Piece piece;
-    private static Board board;
-    
-    public static void askMainMenu() {
+
+    ///////////////////////////////////////////////////////////////////////////
+    //Métodos de menús
+    ///////////////////////////////////////////////////////////////////////////
+    public static void selectOptionInMainMenu() {
         Ui.printMainMenu();
-        String entry = Ui.getEntry().toString();
+        String entry = Ui.getEntry();
         switch (entry) {
             case "1": {//Jugar
+                System.out.println("");
+                System.out.println("jugar");
+                System.out.println("");
                 play();
                 break;
             }
@@ -36,7 +35,7 @@ public class Engine {
                 Ui.printInstructions();
                 break;
             }
-            case "3": {//Créditos
+            case "3": {//Creditos
                 Ui.printCredits();
                 break;
             }
@@ -44,54 +43,61 @@ public class Engine {
                 Ui.printBye();
                 break;
             }
-            default: {//Cualquier entrada no válida
+            default: {//Cualquier entrada inválida
                 Ui.error();
+                //exitFromMainMenu(false);
                 break;
             }
         }
+    }//Fin del método selectOptionInMainMenu
 
-    }
-
-    public static Board seclectBoard() {
-        String entry = Ui.getEntry().toString();
+    public static Board selectBoard() {
+        Ui.printBoardMenu();
+        String entry = Ui.getEntry();
         Board board = null;
-        switch (entry) {//Selecciona un tablero de 5x7
-            case "1": {
-                board = new Board(5, 7);
+        switch(entry){
+            case "1":{//Tablero de 5x7
+                board = new Board(5,7);
                 Ui.printBoard(board);
                 break;
             }
-            case "2": {//Selecciona un tablero de 5x9
-                board = new Board(5, 9);
+            case "2":{//Tablero de 5x9
+                board = new Board(5,9);
                 Ui.printBoard(board);
                 break;
             }
-            case "3": {//Selecciona un tablero de 5x10
-                board = new Board(5, 10);
+            case "3":{//Tablero de 5x10
+                board = new Board(5,10);
                 Ui.printBoard(board);
+                break;
             }
-            default: {//Cualquier entrada no válida
+            case "4":{//Salir
+                exitFromBoardMenu(true);
+                break;
+            }
+            default:{//Cualquier entrada inválida
                 Ui.error();
                 break;
             }
         }
         return board;
     }
-
-    public static Piece selectPiece() {
+    
+    public static Piece selectPiece(){
+        Ui.printPieceList();
         String entry = Ui.getEntry().toString();
-        piece = null;
+        Piece piece = null;
         switch (entry) {
             case "1": {//Seleccion de pieza F
                 piece = new FPiece();
-                usedPieces.add(piece);
+                //usedPieces.add(piece);
                 Ui.printPiece(piece);
                 
                 break;
             }
             case "2": {//Seleccion de pieza T
                 piece = new TPiece();
-                usedPieces.add(piece);
+                //usedPieces.add(piece);
                 Ui.printPiece(piece);
                 break;
             }
@@ -150,155 +156,38 @@ public class Engine {
                 break;
             }
         }
-
-        return piece;
-    }
-
-    public static void askPieceOptions() {
-
-        String entry = Ui.getEntry().toString();
-
-        switch (entry) {
-            case "1": {//Ubicar Pieza
-                board = placePiece(board, piece);
-                Ui.printBoard(board);
-                break;
-            }
-            case "2": {//Re-ubicar Pieza
-                Ui.printUsedPieces(usedPieces);
-                String entry2 = Ui.getEntry().toString();
-                piece = getPieceFromUsedList();
-                Ui.printPiece(piece);
-                placePiece(board,piece);
-                break;
-            }
-            case "3": {//Rotar
-                askRotateOptions(piece);
-                Ui.printPiece(piece);
-                break;
-            }
-            case "4": {//Reflejar
-                askReflectOptions(piece);
-                Ui.printPiece(piece);
-                break;
-            }
-            default: {//Cualquier entrada inválida
-                Ui.error();
-                break;
-            }
-        }
-
-    }
-    
-    public static Piece askReflectOptions(Piece piece) {
-        Ui.printReflectOptions();
-        String entry = Ui.getEntry().toString();
-        Square[][] pieceMatrix = piece.getPieceMatrix();
         
-        switch(entry){
-            case "1": {//Reflejar Verticalmente
-                pieceMatrix = piece.reflectVertical(piece);
-                piece.setPieceMatrix(pieceMatrix);
-                break;
-            }
-            case "2": {//Reflejar Horizontalmente
-                pieceMatrix = piece.reflectHorizontal(piece);
-                piece.setPieceMatrix(pieceMatrix);
-                break;
-            }
-            default: {//Cualquier entrada inválida
-                Ui.error();
-                break;
-            }
-        }
         return piece;
     }
 
-    public static Piece askRotateOptions(Piece piece) {
-        Ui.printRotateOptions();
-        String entry = Ui.getEntry().toString();
-        Square[][] pieceMatrix = piece.getPieceMatrix();
-        switch (entry) {
-            case "1": {//Rotar a la derecha
-                pieceMatrix = piece.rotateRight(piece);
-                piece.setPieceMatrix(pieceMatrix);
-                break;
-            }
-            case "2": {//Rotar a la Izquierda
-                pieceMatrix = piece.rotateLeft(piece);
-                piece.setPieceMatrix(pieceMatrix);
-                break;
-            }
-            default: {//Cualquier entrada inválida
-                Ui.error();
-                break;
-            }
-        }
-        return piece;
-    }
-
-    public static Piece getPieceFromUsedList() {
-
-        Piece piece;
-        String entry = Ui.getEntry().toString();
-        if (isNumeric(entry)) {
-            int index = Integer.parseInt(entry);
-            piece = usedPieces.get(index);
-        } else {
-            Ui.error();
-            piece = null;
-        }
-        return piece;
-    }
-
-    /* public static ArrayList usedPieces(Piece piece){
-        ArrayList <Piece> usedPieces = new ArrayList <Piece>();
-        usedPieces.add(piece);
-        return usedPieces;
-        
-    }*/
     public static void play() {
-      
-        
-
-    }
-
-    public static boolean isNumeric(String entry) {
-        try {
-            Integer.parseInt(entry);
-            return true;
-        } catch (NumberFormatException nfe) {
-            return false;
+        Board board;
+        while (Pentomino.isStateForBoardMenu()) {
+            board = selectBoard();
+            
         }
     }
 
-    public static void keepGoing() {
-        Pentomino.setState(true);
-    }
-
-    public static void exit() {
-        Pentomino.setState(false);
-    }
-
-    public static Board placePiece(Board board, Piece piece) {
-        Scanner lector = new Scanner(System.in);
-
-        Object[][] boardMatrix = board.getBoard();
-
-        Square[][] pieceMatrix = piece.getPieceMatrix();
-
-        Pentomino.imprimeMatriz(boardMatrix);
-        Pentomino.imprimeMatriz(pieceMatrix);
-
-        int rowN = lector.nextInt();
-        int colN = lector.nextInt();
-
-        for (int row = 0; row < pieceMatrix.length; row++) {
-            for (int col = 0; col < pieceMatrix[0].length; col++) {
-                boardMatrix[row + rowN][col + colN] = pieceMatrix[row][col];
-            }
+    public static void exitFromBoardMenu(boolean state) {
+        if (state) {
+            Pentomino.setStateForBoardMenu(!state);
+        } else {
+            Pentomino.setStateForBoardMenu(!state);
         }
-        board = new Board(boardMatrix);
-        return board;
+    }
+
+    public static void exitFromMainMenu(boolean state) {
+        if (state) {
+            Pentomino.setStateForMainMenu(!state);
+        } else {
+            Pentomino.setStateForMainMenu(!state);
+        }
+
+    }//Fin del método exitFromMainMenu
+
+    private static class IPiece extends Piece {
+
+        public IPiece() {
+        }
     }
 }

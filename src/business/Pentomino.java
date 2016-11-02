@@ -11,46 +11,44 @@ import ui.Ui;
 
 public class Pentomino {
 
-    private static boolean state = true;
-
+    ///////////////////////////////////////////////////////////////////////////
+    //Atributos
+    ///////////////////////////////////////////////////////////////////////////
+    
+    private static boolean stateForMainMenu = true;
+    private static boolean stateForBoardMenu = true;
+    private static Piece piece;
+    
     public static void main(String[] args) {
         Ui.printWelcome();
-        /*
-        Piece fp = new FPiece();
-        Piece tp = new TPiece();
-        ArrayList <Piece> usedPieces = new ArrayList<Piece>();
-        usedPieces.add(tp);
-        usedPieces.add(fp);
-        Ui.printUsedPieces(usedPieces);
-        */while (state) {
-        Engine.askMainMenu();
-
+        
+        
+        while (stateForMainMenu) {
+            Engine.selectOptionInMainMenu();
         }
-        //Ui.printPieceMenu();
 
     }
+    
+    ///////////////////////////////////////////////////////////////////////////
+    //Setters y Getters
+    ///////////////////////////////////////////////////////////////////////////
 
-    static void imprimeMatriz(Object[][] matriz) {
-
-        for (int row = 0; row < matriz.length; row++) {
-            for (int col = 0; col < matriz[0].length; col++) {
-                System.out.print(matriz[row][col]);
-            }
-            System.out.println("");
-
-        }
+    public static void setStateForMainMenu(boolean stateForMainMenu) {
+        Pentomino.stateForMainMenu = stateForMainMenu;
     }
 
-    public static void setState(boolean state) {
-        Pentomino.state = state;
+    public static void setStateForBoardMenu(boolean stateForBoardMenu) {
+        Pentomino.stateForBoardMenu = stateForBoardMenu;
     }
+
+    public static boolean isStateForBoardMenu() {
+        return stateForBoardMenu;
+    }
+
+ 
+
+    
+
 
 }
 
-/*Piece fp = new FPiece();
-        Piece tp = new TPiece();
-        
-        ArrayList <Piece> usedPieces = new ArrayList<Piece>();
-        usedPieces.add(tp);
-        usedPieces.add(fp);
-        Ui.printUsedPieces(usedPieces);*/
