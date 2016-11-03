@@ -1,6 +1,7 @@
 package ui;
 
 import business.Engine;
+import business.Pentomino;
 import data.Board;
 import data.Piece;
 import java.util.ArrayList;
@@ -77,12 +78,12 @@ public class Ui {
             System.out.println("");
             System.out.println("Vemola prro");
             System.out.println("");
-            Engine.exitFromMainMenu(true);
+            Pentomino.setStateForMainMenu(false);
         } else if (entry.equals("no") || entry.equals("n") || entry.equals("nel") || entry.equals("nel prro")) {
             System.out.println("");
             System.out.println("Buena :v");
             System.out.println("");
-            Engine.exitFromMainMenu(false);
+            Pentomino.setStateForMainMenu(true);
         } else {
             error();
         }
@@ -162,6 +163,7 @@ public class Ui {
         System.out.println("2. □ Rotar");
         System.out.println("3. □ Reflejar");
         System.out.println("4. □ Seleccionar Otra Pieza");
+        System.out.println("5. □ Salir");
         System.out.println("");
     }
     
