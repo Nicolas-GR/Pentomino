@@ -49,6 +49,17 @@ public class Ui {
         return entry;
     }
 
+    public static int[] getRowAndCol() {
+        int[] posArray = new int[2];
+        System.out.println("");
+        System.out.println("Ingrese la fila: ");
+        posArray[0] = Integer.parseInt(Ui.getEntry());
+        System.out.println("");
+        System.out.println("Ingrese la columna: ");
+        posArray[1] = Integer.parseInt(Ui.getEntry());
+        return posArray;
+    }
+
     public static void printCredits() {
         System.out.println("");
         System.out.println(creditos);
@@ -66,7 +77,7 @@ public class Ui {
     }
 
     public static void printCongratulations(Board board) {
-        System.out.println("Felicitaciones acaba de resolver el tablero de" + board.getRowDimension() + "x" + board.getColDimension());
+        System.out.println("Felicitaciones acaba de resolver el tablero de" + board.getRowDimension() + " x " + board.getColDimension());
     }
 
     public static void printBye() {
@@ -74,7 +85,7 @@ public class Ui {
         System.out.println("¿Seguro que quiere salir?");
         System.out.println("");
         String entry = lector.nextLine().toLowerCase();
-        if (entry.equals("yes") || entry.equals("y") || entry.equals("si") || entry.equals("sí") || entry.equals("s")) {
+        if (entry.equals("yes") || entry.equals("y") || entry.equals("si") || entry.equals("sí") || entry.equals("s") || entry.equals("siza")) {
             System.out.println("");
             System.out.println("Vemola prro");
             System.out.println("");
@@ -101,16 +112,36 @@ public class Ui {
     ///////////////////////////////////////////////////////////////////////////
     public static void printBoard(Board board) {
         System.out.println("");
-        System.out.println("Su tablero:");
+        System.out.println("Su tablero actual:");
         System.out.println(board);
         System.out.println("");
     }
 
     public static void printPiece(Piece piece) {
         System.out.println("");
-        System.out.println("Su pieza:");
+        System.out.println("Su pieza actual:");
         System.out.println(piece);
         System.out.println("");
+    }
+    
+    public static void printList(ArrayList<Piece> usedPieces){
+        System.out.println("");
+        System.out.println("Las piezas usadas: ");
+        for(Piece itPiece : usedPieces){
+            System.out.println(itPiece + "\nUna  pieza de tipo: " + itPiece.getName());
+            System.out.println("");
+        }
+    }
+
+    public static void printUsedPieces(ArrayList<Piece> usedPieces) {
+        if (usedPieces.isEmpty()) {
+            System.out.println("No hay piezas para reubicar, por favor ubique una pieza primero");
+        } else {
+            System.out.println("Seleccione el número del índice de  la pieza a reubicar");
+            for (int i = 0; i < usedPieces.size(); i++) {
+                System.out.println(usedPieces.get(i) + "\nCon índice: " + i);
+            }
+        }
     }
 
     ///////////////////////////////////////////////////////////////////////////
@@ -145,17 +176,6 @@ public class Ui {
         System.out.println("");
     }
 
-    public static void printUsedPieces(ArrayList<Piece> usedPieces) {
-        if (usedPieces.isEmpty()) {
-            System.out.println("No hay piezas para reubicar, por favor ubique una pieza primero");
-        } else {
-            System.out.println("Seleccione el número del índice de  la pieza a reubicar");
-            for (int i = 0; i < usedPieces.size() ; i++){
-                System.out.println(usedPieces.get(i) + "Con índice: " + i );
-            }
-        }
-    }
-
     public static void printPieceOptions() {
         System.out.println("");
         System.out.println("¿Qué desea hacer?");
@@ -166,8 +186,8 @@ public class Ui {
         System.out.println("5. □ Salir");
         System.out.println("");
     }
-    
-    public static void printPieceMenu(){
+
+    public static void printPieceMenu() {
         System.out.println("");
         System.out.println("¿Qué desea hacer?");
         System.out.println("1. □ Seleccionar Pieza Nueva");
@@ -175,17 +195,16 @@ public class Ui {
         System.out.println("3. □ Salir");
         System.out.println("");
     }
-    
-    
-    public static void printReflectOptions(){
+
+    public static void printReflectOptions() {
         System.out.println("");
         System.out.println("¿Qué desea hacer?");
         System.out.println("1. □ Reflejar Verticalmente");
-        System.out.println("2. □ Reflejar Horizontalmente"); 
+        System.out.println("2. □ Reflejar Horizontalmente");
         System.out.println("");
-   }
-    
-    public static void printRotateOptions(){
+    }
+
+    public static void printRotateOptions() {
         System.out.println("");
         System.out.println("¿Qué desea hacer?");
         System.out.println("1. □ Rotar a la derecha");

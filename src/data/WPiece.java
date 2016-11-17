@@ -9,13 +9,14 @@ public class WPiece extends Piece {
     private final static int a = 3;
     private final static int b = 3;
     private final char pieceName = 'W';
-    private final String value = "*";
+    private final String pieceValue = "*";
     private final String emptySquare = " ";
 
     ///////////////////////////////////////////////////////////////////////////
     //Constructores
     ///////////////////////////////////////////////////////////////////////////
     public WPiece() {
+        this.setValue(pieceValue);
         this.setName(pieceName);
         this.setX(a);
         this.setY(b);
@@ -33,7 +34,7 @@ public class WPiece extends Piece {
                     Square square = new Square(row, col, emptySquare);
                     wMatrix[row][col] = square;
                 } else {
-                    Square square = new Square(row, col, value);
+                    Square square = new Square(row, col, pieceValue);
                     wMatrix[row][col] = square;
                 }
             }

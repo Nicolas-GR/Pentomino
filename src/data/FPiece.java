@@ -9,7 +9,7 @@ public class FPiece extends Piece {
     private final static int a = 3;
     private final static int b = 3;
     private final char pieceName = 'F';
-    private final String value = "O";
+    private final String pieceValue = "O";
     private final String emptySquare = " ";
     
 
@@ -17,6 +17,7 @@ public class FPiece extends Piece {
     //Constructores
     ///////////////////////////////////////////////////////////////////////////
     public FPiece() {
+        this.setValue(pieceValue);
         this.setName(pieceName);
         this.setX(a);
         this.setY(b);
@@ -38,12 +39,12 @@ public class FPiece extends Piece {
                         Square square = new Square(row, col, emptySquare);
                         fMatrix[row][col] = square;
                     } else {
-                        Square square = new Square(row, col, value);
+                        Square square = new Square(row, col, pieceValue);
                         fMatrix[row][col] = square;
                     }
 
                 } else {
-                    Square square = new Square(row, col, value);
+                    Square square = new Square(row, col, pieceValue);
                     fMatrix[row][col] = square;
                 }
             }

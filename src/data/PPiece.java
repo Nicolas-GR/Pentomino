@@ -9,13 +9,14 @@ public class PPiece extends Piece {
     private final static int a = 3;
     private final static int b = 2;
     private final char pieceName = 'P';
-    private final String value = "■";
+    private final String pieceValue = "■";
     private final String emptySquare = " ";
 
     ///////////////////////////////////////////////////////////////////////////
     //Constructores
     ///////////////////////////////////////////////////////////////////////////
     public PPiece() {
+        this.setValue(pieceValue);
         this.setX(a);
         this.setY(b);
         this.setName(pieceName);
@@ -27,7 +28,7 @@ public class PPiece extends Piece {
                     Square square = new Square(row, col, emptySquare);
                     pMatrix[row][col] = square;
                 } else {
-                    Square square = new Square(row, col, value);
+                    Square square = new Square(row, col, pieceValue);
                     pMatrix[row][col] = square;
                 }
             }
@@ -40,5 +41,4 @@ public class PPiece extends Piece {
         this.setName(pieceName);
     }
 
-   
 }

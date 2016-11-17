@@ -9,13 +9,14 @@ public class LPiece extends Piece {
     private final static int a = 4;
     private final static int b = 2;
     private final char pieceName = 'L';
-    private final String value = "¤";
+    private final String pieceValue = "¤";
     private final String emptySquare = " ";
 
     ///////////////////////////////////////////////////////////////////////////
     //Constructores
     ///////////////////////////////////////////////////////////////////////////
     public LPiece() {
+        this.setValue(pieceValue);
         this.setName(pieceName);
         this.setX(a);
         this.setY(b);
@@ -27,7 +28,7 @@ public class LPiece extends Piece {
                     Square square = new Square(row, col, emptySquare);
                     lMatrix[row][col] = square;
                 } else {
-                    Square square = new Square(row, col, value);
+                    Square square = new Square(row, col, pieceValue);
                     lMatrix[row][col] = square;
                 }
             }

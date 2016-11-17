@@ -9,13 +9,14 @@ public class IPiece extends Piece {
     private final static int a = 5;
     private final static int b = 1;
     private final char pieceName = 'I';
-    private final String value = "±";
+    private final String pieceValue = "±";
     private final String emptySquare = " ";
 
     ///////////////////////////////////////////////////////////////////////////
     //Constructores
     ///////////////////////////////////////////////////////////////////////////
     public IPiece() {
+        this.setValue(pieceValue);
         this.setName(pieceName);
         this.setX(a);
         this.setY(b);
@@ -23,7 +24,7 @@ public class IPiece extends Piece {
 
         for (int row = 0; row < iMatrix.length; row++) {
             for (int col = 0; col < iMatrix[0].length; col++) {
-                Square square = new Square(row, col, value);
+                Square square = new Square(row, col, pieceValue);
                 iMatrix[row][col] = square;
             }
         }

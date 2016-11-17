@@ -9,13 +9,14 @@ public class XPiece extends Piece {
     private final static int a = 3;
     private final static int b = 3;
     private final char pieceName = 'X';
-    private final String value = "×";
+    private final String pieceValue = "×";
     private final String emptySquare = " ";
 
     ///////////////////////////////////////////////////////////////////////////
     //Constructores
     ///////////////////////////////////////////////////////////////////////////
     public XPiece() {
+        this.setValue(pieceValue);
         this.setName(pieceName);
         this.setX(a);
         this.setY(b);
@@ -28,11 +29,11 @@ public class XPiece extends Piece {
                         Square square = new Square(row, col, emptySquare);
                         xMatrix[row][col] = square;
                     } else {
-                        Square square = new Square(row, col, value);
+                        Square square = new Square(row, col, pieceValue);
                         xMatrix[row][col] = square;
                     }
                 } else {
-                    Square square = new Square(row, col, value);
+                    Square square = new Square(row, col, pieceValue);
                     xMatrix[row][col] = square;
                 }
 

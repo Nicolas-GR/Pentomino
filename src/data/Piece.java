@@ -7,6 +7,7 @@ public abstract class Piece {
     private Square pieceMatrix[][];
     private int x;
     private int y;
+    private String value;
     
     //Método Rotar hacia la Izquierda.
     
@@ -25,7 +26,7 @@ public abstract class Piece {
     
     public Square[][] rotateRight(Piece piece) {
         Square[][] matrix = piece.getPieceMatrix();
-        Square[][] tempMatrix = new Square[y][x];
+        Square[][] tempMatrix = new Square[matrix[0].length][matrix.length];
         for (int row = 0; row < matrix.length; row++) {
             for (int col = 0; col < matrix[0].length; col++) {
                 tempMatrix[col][matrix.length - 1 - row] = matrix[row][col];
@@ -38,7 +39,7 @@ public abstract class Piece {
     
     public Square[][] reflectVertical(Piece piece) {
         Square[][] matrix = piece.getPieceMatrix();
-        Square[][] tempMatrix = new Square[x][y];
+        Square[][] tempMatrix = new Square[matrix.length][matrix[0].length];
         for (int row = 0; row < matrix.length; row++) {
             for (int col = 0; col < matrix[0].length; col++) {
                 tempMatrix[row][matrix[0].length - 1 - col] = matrix[row][col];
@@ -88,6 +89,15 @@ public abstract class Piece {
     public void setY(int y) {
         this.y = y;
     }
+
+    public String getValue() {
+        return value;
+    }
+
+    public void setValue(String value) {
+        this.value = value;
+    }
+    
     
     ///////////////////////////////////////////////////////////////////////////
     // Sobre escritura del método toString.

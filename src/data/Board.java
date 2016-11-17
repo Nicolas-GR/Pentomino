@@ -10,14 +10,18 @@ public class Board {
     
     private int rowDimension;
     private int colDimension;
-    private Object board[][];
+    private Square board[][];
 
     ///////////////////////////////////////////////////////////////////////////
     //Constructores
     ///////////////////////////////////////////////////////////////////////////
     
     public Board(int rowDimension, int colDimension) {
-        board = new Object[rowDimension + 2][colDimension + 2];
+        
+        this.setColDimension(colDimension);
+        this.setRowDimension(rowDimension);
+        
+        board = new Square[rowDimension + 2][colDimension + 2];
         Square emptySquare = new Square(0 ,0 ,"□");
 
         for (int row = 0; row < board.length; row++) {
@@ -66,7 +70,7 @@ public class Board {
 
     }
 
-    public Board(Object[][] board) {
+    public Board(Square[][] board) {
         this.board = board;
     }
     
@@ -105,14 +109,24 @@ public class Board {
         return colDimension;
     }
 
+    public void setRowDimension(int rowDimension) {
+        this.rowDimension = rowDimension;
+    }
+
+    public void setColDimension(int colDimension) {
+        this.colDimension = colDimension;
+    }
+    
+    
+
     
     
     
-    public Object[][] getBoard() {
+    public Square[][] getBoard() {
         return board;
     }
 
-    public void setBoard(Object[][] board) {
+    public void setBoard(Square[][] board) {
         this.board = board;
     }
     

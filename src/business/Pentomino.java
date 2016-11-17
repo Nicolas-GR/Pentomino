@@ -2,12 +2,7 @@
 package business;
 
 import data.Board;
-import data.FPiece;
 import data.Piece;
-import data.Square;
-import data.TPiece;
-import data.ZPiece;
-import java.util.ArrayList;
 import ui.Ui;
 
 public class Pentomino {
@@ -22,6 +17,7 @@ public class Pentomino {
     private static boolean stateOptionPieceMenu = true;
     private static Piece piece;
     public static Board board;
+    
     
     
     public static void main(String[] args) {

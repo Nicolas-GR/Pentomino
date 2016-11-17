@@ -9,13 +9,14 @@ public class VPiece extends Piece {
     private final static int a = 3;
     private final static int b = 3;
     private final char pieceName = 'V';
-    private final String value = "@";
+    private final String pieceValue = "@";
     private final String emptySquare = " ";
 
     ///////////////////////////////////////////////////////////////////////////
     //Constructores
     ///////////////////////////////////////////////////////////////////////////
     public VPiece() {
+        this.setValue(pieceValue);
         this.setName(pieceName);
         this.setX(a);
         this.setY(b);
@@ -28,7 +29,7 @@ public class VPiece extends Piece {
                     vMatrix[row][col] = square;
 
                 } else {
-                    Square square = new Square(row, col, value);
+                    Square square = new Square(row, col, pieceValue);
                     vMatrix[row][col] = square;
                 }
             }

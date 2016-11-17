@@ -9,13 +9,14 @@ public class ZPiece extends Piece {
     private final static int a = 3;
     private final static int b = 3;
     private final char pieceName = 'Z';
-    private final String value = "ø";
+    private final String pieceValue = "ø";
     private final String emptySquare = " ";
 
     ///////////////////////////////////////////////////////////////////////////
     //Constructores
     ///////////////////////////////////////////////////////////////////////////
     public ZPiece() {
+        this.setValue(pieceValue);
         this.setName(pieceName);
         this.setX(a);
         this.setY(b);
@@ -30,7 +31,7 @@ public class ZPiece extends Piece {
                     Square square = new Square(row, col, emptySquare);
                     zMatrix[row][col] = square;
                 } else {
-                    Square square = new Square(row, col, value);
+                    Square square = new Square(row, col, pieceValue);
                     zMatrix[row][col] = square;
                 }
             }

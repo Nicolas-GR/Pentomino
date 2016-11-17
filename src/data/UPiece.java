@@ -11,13 +11,14 @@ public class UPiece extends Piece{
     private final static int a = 2;
     private final static int b = 3;
     private final char pieceName = 'U';
-    private final String value = "¢";
+    private final String pieceValue = "¢";
     private final String emptySquare = " ";
 
     ///////////////////////////////////////////////////////////////////////////
     //Constructores
     ///////////////////////////////////////////////////////////////////////////
     public UPiece() {
+        this.setValue(pieceValue);
         this.setName(pieceName);
         this.setX(a);
         this.setY(b);
@@ -29,7 +30,7 @@ public class UPiece extends Piece{
                     Square square = new Square(row, col, emptySquare);
                     uMatrix[row][col] = square;
                 } else {
-                    Square square = new Square(row, col, value);
+                    Square square = new Square(row, col, pieceValue);
                     uMatrix[row][col] = square;
                 }
             }

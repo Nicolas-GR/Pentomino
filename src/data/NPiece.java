@@ -9,13 +9,14 @@ public class NPiece extends Piece {
     private final static int a = 4;
     private final static int b = 2;
     private final char pieceName = 'N';
-    private final String value = "©";
+    private final String pieceValue = "©";
     private final String emptySquare = " ";
 
     ///////////////////////////////////////////////////////////////////////////
     //Constructores
     ///////////////////////////////////////////////////////////////////////////
     public NPiece() {
+        this.setValue(pieceValue);
         this.setName(pieceName);
         this.setX(a);
         this.setY(b);
@@ -34,11 +35,11 @@ public class NPiece extends Piece {
                         Square square = new Square(row, col, emptySquare);
                         nMatrix[row][col] = square;
                     } else {
-                        Square square = new Square(row, col, value);
+                        Square square = new Square(row, col, pieceValue);
                         nMatrix[row][col] = square;
                     }
                 } else {
-                    Square square = new Square(row, col, value);
+                    Square square = new Square(row, col, pieceValue);
                     nMatrix[row][col] = square;
                 }
             }
